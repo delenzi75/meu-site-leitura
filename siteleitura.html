@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil do Autor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f4f1e9;
+      color: #222;
+    }
+    header {
+      background-color: #3e2f28;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .autor-perfil {
+      text-align: center;
+      padding: 2rem;
+    }
+    .autor-perfil img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #3e2f28;
+    }
+    .livros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .livro-card {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .livro-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .visualizador {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #fdfaf4;
+      padding: 2rem;
+      overflow-y: scroll;
+    }
+    .pagina {
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    .btn-pagar {
+      display: block;
+      background-color: #3e2f28;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 2rem auto;
+      width: fit-content;
+    }
+    .fechar-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #3e2f28;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nome do Autor</h1>
+  </header>
+
+  <div class="autor-perfil">
+    <img src="https://via.placeholder.com/120" alt="Foto do Autor">
+    <h2>Biografia do autor</h2>
+    <p>Autor de fantasia sombria e mistério psicológico.</p>
+  </div>
+
+  <div class="livros-grid">
+    <div class="livro-card" onclick="abrirLivro()">
+      <img src="https://via.placeholder.com/150x220" alt="Capa do Livro" />
+      <h3>Título do Livro</h3>
+    </div>
+  </div>
+
+  <div class="visualizador" id="leitor">
+    <button class="fechar-btn" onclick="fecharLivro()">Fechar</button>
+    <div class="pagina">
+      <p><strong>Página 1:</strong> Era uma vez, em um reino escondido entre florestas e sombras...</p>
+    </div>
+    <div class="pagina">
+      <p><strong>Página 2:</strong> A jovem Maera ouviu o chamado. As cores dançavam no ar...</p>
+    </div>
+    <a href="#" class="btn-pagar">Continuar lendo - R$9,90</a>
+  </div>
+
+  <script>
+    function abrirLivro() {
+      document.getElementById("leitor").style.display = "block";
+    }
+    function fecharLivro() {
+      document.getElementById("leitor").style.display = "none";
+    }
+  </script>
+</body>
+</html>
